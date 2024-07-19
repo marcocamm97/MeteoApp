@@ -1,0 +1,58 @@
+<footer class="footer bg-dark text-white">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="social" style="text-align: center;">
+    <a href="#" class="fa fa-facebook" style="margin-right:15px"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <div class="rights">
+      <p class="text-center">
+        Copyright 2024 - All rights reserved<br>
+        Developed by Marco
+      </p>
+    </div>
+    <p class="text-center" style="margin: 0">Privacy and terms | Contacts</p>
+  </div>
+  <div class="cookie-container" style="margin-top: 60px;">
+    <div class="cookie-consent" style=" background-color: #222; border-radius: 10px; margin-bottom: 20px; text-align: center;">
+      <p>Questo sito utilizza i cookies per migliorare la tua esperienza. Vuoi accettare i cookies?</p>
+      <button id="accept-cookies" class="btn btn-primary" style="margin-right: 10px;">Accetta</button>
+      <button id="decline-cookies" class="btn btn-secondary">Rifiuta</button>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .cookie-consent p {
+    margin: 0 0 10px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+</style>
+
+<script>
+  document.getElementById('accept-cookies').addEventListener('click', function() {
+    alert('Hai accettato i cookies.');
+    //
+  });
+
+  document.getElementById('decline-cookies').addEventListener('click', function() {
+    alert('Hai rifiutato i cookies.');
+
+  });
+</script>

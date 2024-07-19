@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+      <img src="logo.jpg" alt="Logo" style="height: 40px;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register">Registrati</a>
+        </li>
+       <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/me">Area Personale</a>
+        </li>-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Regioni
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#north">Nord</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#center">Centro</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#south">Sud</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="search-container ml-auto">
+        <input class="search-input form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()">
+        <button class="search-button btn btn-primary" type="submit">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+</nav>

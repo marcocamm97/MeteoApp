@@ -1,0 +1,16 @@
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* Puoi anche applicare il font a specifici elementi */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700; /* Peso del font, puoi cambiare in base al peso disponibile */
+}
+
+p, a, span, div {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+}
+
+

@@ -1,0 +1,25 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-container">
+  <legend>Register</legend>
+
+  <div class="form-group">
+    <label for="email">Email:</label><br>
+    <input [(ngModel)]="signUpRequest.email" type="text" name="email" required id="email"><br><br>
+  </div>
+
+  <div class="form-group">
+    <label for="username">Username:</label><br>
+    <input [(ngModel)]="signUpRequest.username" type="text" name="username" required id="username"><br><br>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password:</label><br>
+    <input [(ngModel)]="signUpRequest.password" type="password" name="password" required id="password"><br><br>
+  </div>
+
+  <div class="form-group">
+    <label for="confirm">Confirm Password:</label><br>
+    <input [(ngModel)]="signUpRequest.confirm" type="password" name="confirm" required id="confirm"><br><br>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
