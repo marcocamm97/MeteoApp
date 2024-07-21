@@ -23,23 +23,24 @@
         </li>-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Regioni
+            Città
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#north">Nord</a></li>
+            <li><a class="dropdown-item" href="#north">Nord Italia</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#center">Centro</a></li>
+            <li><a class="dropdown-item" href="#center">Centro Italia</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#south">Sud</a></li>
+            <li><a class="dropdown-item" href="#south">Sud Italia</a></li>
           </ul>
         </li>
       </ul>
 
       <div class="search-container ml-auto">
-        <input class="search-input form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()">
-        <button class="search-button btn btn-primary" type="submit">
+        <input class="search-input form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="city" placeholder="Enter city name">
+        <button class="search-button btn btn-primary" type="submit" (click)="searchWeather()">
           <i class="material-icons">search</i>
         </button>
+
       </div>
 
 

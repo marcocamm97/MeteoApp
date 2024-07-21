@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { UserDto } from '../../model/UserDto';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import {LoginRequest} from "../../model/LoginRequest";
 import {SignUpRequest} from "../../model/SignUpRequest";
 
@@ -29,26 +29,29 @@ export class UserService {
     );
   }
 
-  public login(user:LoginRequest) : Observable<LoginRequest>{
 
-    return this.http.post<LoginRequest>(`${this.getUserUrl}/login`, JSON.stringify(user)).pipe(   retry(3),
-      catchError(this.handleError));
+  login(user: LoginRequest): Observable<any> {
+    return this.http.post<any>(`${this.getUserUrl}/login`, user, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
   }
 
   private handleError(error: HttpErrorResponse) {
-    let errorMessage: string;
-    if (error.status === 0) {
-      // A client-side or network error occurred.
-      console.error('An error occurred:', error.error);
-      errorMessage = `A client-side or network error occurred: ${error.error}`;
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+
+      errorMessage = `An error occurred: ${error.error.message}`;
     } else {
-      // The backend returned an unsuccessful response code.
-      console.error(
-        `Backend returned code ${error.status}, body was:`, error.error);
-      errorMessage = `Backend returned code ${error.status}, body was: ${error.error}`;
+
+      errorMessage = `Server returned code: ${error.status}, error message is: ${error.message}`;
     }
-    // Return an observable with a user-facing error message.
-    return throwError(() => new Error(errorMessage));
+    console.error(errorMessage);
+    return throwError(errorMessage);
   }
 }
 

@@ -4,6 +4,7 @@ import {CarouselComponent} from "../carousel/carousel.component";
 import {MyPersonalAreaComponent} from "../my-personal-area/my-personal-area.component";
 import {FooterComponent} from "../footer/footer.component";
 import {CardsComponent} from "../cards/cards.component";
+import {WeatherComponent} from "../weather/weather.component";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import {CardsComponent} from "../cards/cards.component";
     CarouselComponent,
     MyPersonalAreaComponent,
     FooterComponent,
-    CardsComponent
+    CardsComponent,
+    WeatherComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
